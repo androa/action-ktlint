@@ -8,4 +8,4 @@ cd "$GITHUB_WORKSPACE"
 
 ktlint --reporter=checkstyle | tee report.xml
 cat report.xml
-cat report.xml | reviewdog -f=checkstyle -name="ktlint" -reporter="${INPUT_REPORTER}" -level="${INPUT_LEVEL}"
+cat report.xml | reviewdog -tee -f=checkstyle -name="ktlint" -reporter="${INPUT_REPORTER}" -level="${INPUT_LEVEL}"
