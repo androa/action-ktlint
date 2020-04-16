@@ -6,5 +6,5 @@ set -x
 
 cd "$GITHUB_WORKSPACE"
 
-ktlint --reporter=checkstyle \
+ktlint --reporter=checkstyle | tee /dev/stderr \
   | reviewdog -f=checkstyle -name="ktlint" -reporter="${INPUT_REPORTER}" -level="${INPUT_LEVEL}"
